@@ -1,5 +1,6 @@
 import 'package:chat_app/firebase_options.dart';
-import 'package:chat_app/view/screens/sin_in_view.dart';
+import 'package:chat_app/features/auth/presentation/view/screens/login_screen.dart';
+import 'package:chat_app/features/auth/presentation/view/screens/regiser_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -14,9 +15,13 @@ class ChatApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      routes: {
+        RegisterScreen.route: (context) => RegisterScreen(),
+        LoginScreen.route: (context) => LoginScreen(),
+      },
       debugShowCheckedModeBanner: false,
-      home: SinupView(),
+      initialRoute: LoginScreen.route,
     );
   }
 }
