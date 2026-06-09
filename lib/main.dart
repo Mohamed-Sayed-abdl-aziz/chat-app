@@ -1,5 +1,5 @@
 import 'package:chat_app/firebase_options.dart';
-import 'package:chat_app/view/sin_in_view.dart';
+import 'package:chat_app/view/screens/sin_in_view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 

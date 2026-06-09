@@ -1,3 +1,5 @@
+import 'package:chat_app/view/widgets/custom_button.dart';
+import 'package:chat_app/view/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 class SinupView extends StatelessWidget {
@@ -30,15 +32,10 @@ class SinupView extends StatelessWidget {
                   style: TextStyle(color: Colors.white, fontSize: 35),
                 ),
               ),
-              TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                ),
-              ),
+              CustomTextField(hintText: "Email"),
+              CustomTextField(hintText: "passwared"),
+
+              CustomButton(category: 'sin in'),
             ],
           ),
         ),
