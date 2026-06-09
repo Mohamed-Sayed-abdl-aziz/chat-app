@@ -1,3 +1,4 @@
+import 'package:chat_app/core/app_colors/app_colors.dart';
 import 'package:chat_app/features/auth/presentation/view/widgets/custom_button.dart';
 import 'package:chat_app/features/auth/presentation/view/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff26435F),
+      backgroundColor: AppColors.primaryColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: SingleChildScrollView(
@@ -21,7 +22,7 @@ class RegisterScreen extends StatelessWidget {
               Text(
                 "scholar Chat",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: AppColors.textColor,
                   fontSize: 40,
                   fontWeight: FontWeight.w400,
                 ),
@@ -31,7 +32,7 @@ class RegisterScreen extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "Register",
-                  style: TextStyle(color: Colors.white, fontSize: 35),
+                  style: TextStyle(color: AppColors.textColor, fontSize: 35),
                 ),
               ),
               SizedBox(height: 20),
@@ -48,7 +49,7 @@ class RegisterScreen extends StatelessWidget {
                   Text(
                     "already have an account ",
                     style: TextStyle(
-                      color: Color(0xffffffff),
+                      color: AppColors.textColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                     ),
@@ -61,7 +62,7 @@ class RegisterScreen extends StatelessWidget {
                     child: Text(
                       "login",
                       style: TextStyle(
-                        color: Color(0xffffffff),
+                        color: AppColors.secundryColor,
                         fontSize: 20,
                         fontWeight: FontWeight.w400,
                       ),

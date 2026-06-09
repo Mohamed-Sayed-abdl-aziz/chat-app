@@ -1,3 +1,4 @@
+import 'package:chat_app/core/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -10,7 +11,7 @@ class CustomButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: Color(0xffffffff),
+          color: AppColors.textColor,
           borderRadius: BorderRadius.circular(14),
         ),
         width: double.infinity,
@@ -19,7 +20,7 @@ class CustomButton extends StatelessWidget {
         child: Text(
           category,
           style: TextStyle(
-            color: Color(0xff26435F),
+            color: AppColors.primaryColor,
             fontSize: 24,
             fontWeight: FontWeight.w400,
           ),
