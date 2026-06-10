@@ -1,4 +1,5 @@
-import 'package:chat_app/core/app_colors/app_colors.dart';
+import 'package:chat_app/core/utils/app_colors.dart';
+import 'package:chat_app/core/utils/validator_app.dart';
 import 'package:chat_app/features/auth/presentation/view/screens/regiser_screen.dart';
 import 'package:chat_app/features/auth/presentation/view/widgets/custom_button.dart';
 import 'package:chat_app/features/auth/presentation/view/widgets/custom_text_field.dart';
@@ -37,9 +38,15 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
-              CustomTextField(hintText: "Email"),
+              CustomTextField(
+                hintText: "Email",
+                validator: ValidatorApp.validateEmail,
+              ),
               SizedBox(height: 10),
-              CustomTextField(hintText: "passwared"),
+              CustomTextField(
+                hintText: "passwared",
+                validator: ValidatorApp.validatePassword,
+              ),
               SizedBox(height: 20),
               CustomButton(category: 'Login'),
               SizedBox(height: 10),
