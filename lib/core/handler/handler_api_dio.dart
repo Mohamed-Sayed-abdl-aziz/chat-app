@@ -1,14 +1,16 @@
 import 'dart:io';
-import 'package:chat_app/core/network/resulet_api.dart';
+import 'package:chat_app/core/network/resulet_firebase.dart';
 import 'package:dio/dio.dart';
 
 class ApiHandlerDioE {
-  static Future<ResultApi<T>> execute<T>(Future<T> Function() action) async {
+  static Future<ResultFirebase<T>> execute<T>(
+    Future<T> Function() action,
+  ) async {
     try {
       final response = await action();
-      return SuccessApi(response);
+      return Success(response);
     } on Exception catch (e) {
-      return ErrorApi(_handleError(e));
+      return Error(_handleError(e));
     }
   }
 
