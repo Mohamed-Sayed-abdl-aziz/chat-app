@@ -1,5 +1,4 @@
 import 'package:chat_app/core/utils/app_colors.dart';
-import 'package:chat_app/core/utils/validator_app.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {

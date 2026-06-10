@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({super.key});
   static const String route = "RegisterScreen";
-  GlobalKey<FormState> formKey = GlobalKey();
+  final GlobalKey<FormState> formKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
