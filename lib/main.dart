@@ -1,3 +1,4 @@
+import 'package:chat_app/features/home/presentation/view/screens/home_screen.dart';
 import 'package:chat_app/firebase_options.dart';
 import 'package:chat_app/features/auth/presentation/view/screens/login_screen.dart';
 import 'package:chat_app/features/auth/presentation/view/screens/regiser_screen.dart';
@@ -19,6 +20,7 @@ class ChatApp extends StatelessWidget {
       routes: {
         RegisterScreen.route: (context) => RegisterScreen(),
         LoginScreen.route: (context) => LoginScreen(),
+        HomeScreen.route: (context) => HomeScreen(),
       },
       debugShowCheckedModeBanner: false,
       initialRoute: LoginScreen.route,
