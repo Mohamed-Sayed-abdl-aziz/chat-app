@@ -48,6 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthCubit, AuthState>(
+      bloc: _cubit,
       listener: (context, state) {
         if (state is AuthLoading) {
           AppDialog.showLoadingUi(context);
