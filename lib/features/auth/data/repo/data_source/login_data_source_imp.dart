@@ -1,6 +1,6 @@
 import 'package:chat_app/core/network/resulet_firebase.dart';
 import 'package:chat_app/features/auth/data/firebase/Auth_firebase.dart';
-import 'package:chat_app/features/auth/data/model/user_model.dart';
+import 'package:chat_app/features/auth/domain/entity/user_entity.dart';
 import 'package:chat_app/features/auth/domain/repo/data_source/login_data_source.dart';
 
 class LoginDataSourceImp implements LoginDataSource {
@@ -8,7 +8,7 @@ class LoginDataSourceImp implements LoginDataSource {
     : _authFirebase = authFirebase;
   final AuthFirebase _authFirebase;
   @override
-  Future<ResultFirebase<bool>> login(UserModel user) async {
+  Future<ResultFirebase<bool>> login(UserEntity user) async {
     final resulte = await _authFirebase.logIn(user: user);
     switch (resulte) {
       case Success<bool>():

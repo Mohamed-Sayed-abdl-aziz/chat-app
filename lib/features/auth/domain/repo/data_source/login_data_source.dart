@@ -1,6 +1,6 @@
 import 'package:chat_app/core/network/resulet_firebase.dart';
-import 'package:chat_app/features/auth/data/model/user_model.dart';
+import 'package:chat_app/features/auth/domain/entity/user_entity.dart';
 
 abstract interface class LoginDataSource {
-  Future<ResultFirebase<bool>> login(UserModel user);
+  Future<ResultFirebase<bool>> login(UserEntity user);
 }

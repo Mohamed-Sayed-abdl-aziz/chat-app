@@ -1,9 +1,9 @@
 import 'package:chat_app/core/network/resulet_firebase.dart';
-import 'package:chat_app/features/auth/data/model/user_model.dart';
+import 'package:chat_app/features/auth/domain/entity/user_entity.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthFirebase {
-  Future<ResultFirebase<bool>> register({required UserModel user}) async {
+  Future<ResultFirebase<bool>> register({required UserEntity user}) async {
     try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: user.email,
@@ -17,7 +17,7 @@ class AuthFirebase {
     }
   }
 
-  Future<ResultFirebase<bool>> logIn({required UserModel user}) async {
+  Future<ResultFirebase<bool>> logIn({required UserEntity user}) async {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: user.email,

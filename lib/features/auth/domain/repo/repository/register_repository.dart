@@ -1,6 +1,6 @@
 import 'package:chat_app/core/network/resulet_firebase.dart';
-import 'package:chat_app/features/auth/data/model/user_model.dart';
+import 'package:chat_app/features/auth/domain/entity/user_entity.dart';
 
 abstract interface class RegisterRepository {
-  Future<ResultFirebase<bool>> register(UserModel user);
+  Future<ResultFirebase<bool>> register(UserEntity user);
 }

@@ -2,6 +2,7 @@ import 'package:chat_app/core/utils/app_colors.dart';
 import 'package:chat_app/core/utils/validator_app.dart';
 import 'package:chat_app/core/widgets/app_dialog.dart';
 import 'package:chat_app/features/auth/data/model/user_model.dart';
+import 'package:chat_app/features/auth/domain/entity/user_entity.dart';
 import 'package:chat_app/features/auth/domain/use_case/login_use_case.dart';
 import 'package:chat_app/features/auth/domain/use_case/register_use_case.dart';
 import 'package:chat_app/features/auth/presentation/view/screens/regiser_screen.dart';
@@ -111,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onTap: () {
                       if (formKey.currentState!.validate()) {
                         _cubit.login(
-                          UserModel(
+                          UserEntity(
                             email: email.text,
                             passwared: password.text,
                           ),
