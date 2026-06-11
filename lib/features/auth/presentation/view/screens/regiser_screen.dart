@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RegisterScreen extends StatefulWidget {
-  RegisterScreen({super.key});
+  const RegisterScreen({super.key});
   static const String route = "RegisterScreen";
 
   @override
