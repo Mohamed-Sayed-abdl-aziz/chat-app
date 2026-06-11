@@ -1,17 +1,15 @@
 part of 'authcubit_cubit.dart';
 
 @immutable
-abstract class AuthcubitState {}
+abstract class AuthState {}
 
-class AuthcubitInitial extends AuthcubitState {}
+class AuthInitial extends AuthState {}
 
-class AuthLoading extends AuthcubitState {}
+class AuthLoading extends AuthState {}
 
-class AuthError extends AuthcubitState {
+class AuthError extends AuthState {
   final String error;
   AuthError(this.error);
 }
 
-class LoginSuccess extends AuthcubitState {}
-
-class RegisterSuccess extends AuthcubitState {}
+class AuthSuccess extends AuthState {}

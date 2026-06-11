@@ -1,5 +1,6 @@
 import 'package:chat_app/core/network/resulet_firebase.dart';
-import 'package:chat_app/features/auth/domain/entity/user_entity.dart';
+import 'package:chat_app/features/auth/data/model/user_model.dart';
+import 'package:chat_app/features/auth/data/repo/repository/login_repository_imp.dart';
 import 'package:chat_app/features/auth/domain/repo/repository/login_repository.dart';
 
 class LoginUseCase {
@@ -7,8 +8,8 @@ class LoginUseCase {
 
   final LoginRepository _repo;
 
-  Future<ResultFirebase<UserEntity>> invok() => _repo.login();
+  Future<ResultFirebase<bool>> invok(UserModel user) => _repo.login(user);
 }
 
-// GetNewsUseCase getNewsUseCaseInject() =>
-//     GetNewsUseCase(homeRepositoryinjectable());
+LoginUseCase loginUseCaseinjectable() =>
+    LoginUseCase(repo: loginRepositoryInjectable());
