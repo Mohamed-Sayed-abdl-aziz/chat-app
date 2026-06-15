@@ -2,9 +2,9 @@ import 'package:chat_app/core/utils/app_colors.dart';
 import 'package:chat_app/features/chat/presentation/view/widgets/chat_bubble.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-  static const String route = "HomeScreen";
+class ChatScreen extends StatelessWidget {
+  const ChatScreen({super.key});
+  static const String route = "ChatScreen";
 
   @override
   Widget build(BuildContext context) {
