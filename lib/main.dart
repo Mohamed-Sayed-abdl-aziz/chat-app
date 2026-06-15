@@ -1,4 +1,4 @@
-import 'package:chat_app/features/home/presentation/view/screens/home_screen.dart';
+import 'package:chat_app/features/chat/presentation/view/screens/home_screen.dart';
 import 'package:chat_app/firebase_options.dart';
 import 'package:chat_app/features/auth/presentation/view/screens/login_screen.dart';
 import 'package:chat_app/features/auth/presentation/view/screens/regiser_screen.dart';

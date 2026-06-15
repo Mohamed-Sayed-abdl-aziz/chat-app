@@ -10,8 +10,11 @@ class LoginRepositoryImp implements LoginRepository {
   final LoginDataSource _dataSource;
 
   @override
-  Future<ResultFirebase<bool>> login(UserEntity user) async {
-    final resulte = await _dataSource.login(user);
+  Future<ResultFirebase<bool>> logIn({
+    required String email,
+    required String password,
+  }) async {
+    final resulte = await _dataSource.logIn(email: email, password: password);
     switch (resulte) {
       case Success<bool>():
         return Success(true);

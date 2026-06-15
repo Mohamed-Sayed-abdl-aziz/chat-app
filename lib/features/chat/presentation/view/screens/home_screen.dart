@@ -1,5 +1,5 @@
 import 'package:chat_app/core/utils/app_colors.dart';
-import 'package:chat_app/features/home/presentation/view/widgets/chat_bubble.dart';
+import 'package:chat_app/features/chat/presentation/view/widgets/chat_bubble.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {

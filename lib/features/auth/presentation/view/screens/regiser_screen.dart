@@ -22,9 +22,9 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   var email = TextEditingController();
-
   var password = TextEditingController();
-
+  var phoneNumber = TextEditingController();
+  var name = TextEditingController();
   var formKey = GlobalKey<FormState>();
 
   late final AuthCubit _cubit;
@@ -95,6 +95,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   SizedBox(height: 20),
                   CustomTextField(
+                    controller: name,
+                    hintText: "name",
+                    validator: ValidatorApp.validateName,
+                  ),
+                  SizedBox(height: 10),
+                  CustomTextField(
+                    controller: phoneNumber,
+                    hintText: "phone number",
+                    validator: ValidatorApp.validatePhoneNumber,
+                  ),
+                  SizedBox(height: 10),
+                  CustomTextField(
                     controller: email,
                     hintText: "Email",
                     validator: ValidatorApp.validateEmail,
@@ -113,7 +125,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         _cubit.register(
                           UserEntity(
                             email: email.text,
-                            passwared: password.text,
+                            password: password.text,
+                            phoneNumber: phoneNumber.text,
+                            uid: "",
+                            name: name.text,
                           ),
                         );
                       }

@@ -17,9 +17,9 @@ class AuthCubit extends Cubit<AuthState> {
   final LoginUseCase _loginUseCase;
   final RegisterUseCase _registerUseCase;
 
-  Future<void> login(UserEntity user) async {
+  Future<void> login({required String email, required String password}) async {
     emit(AuthLoading());
-    final resulet = await _loginUseCase.invok(user);
+    final resulet = await _loginUseCase.invok(email: email, password: password);
 
     switch (resulet) {
       case Success<bool>():

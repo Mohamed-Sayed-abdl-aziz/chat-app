@@ -8,7 +8,7 @@ import 'package:chat_app/features/auth/presentation/view/screens/regiser_screen.
 import 'package:chat_app/features/auth/presentation/view/widgets/custom_button.dart';
 import 'package:chat_app/features/auth/presentation/view/widgets/custom_text_field.dart';
 import 'package:chat_app/features/auth/presentation/view_model/authcubit/authcubit_cubit.dart';
-import 'package:chat_app/features/home/presentation/view/screens/home_screen.dart';
+import 'package:chat_app/features/chat/presentation/view/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -111,10 +111,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     onTap: () {
                       if (formKey.currentState!.validate()) {
                         _cubit.login(
-                          UserEntity(
-                            email: email.text,
-                            passwared: password.text,
-                          ),
+                          email: email.text,
+                          password: password.text,
                         );
                       }
                     },
