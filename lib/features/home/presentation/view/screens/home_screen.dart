@@ -1,5 +1,6 @@
 import 'package:chat_app/core/utils/app_colors.dart';
 import 'package:chat_app/features/home/presentation/view/widgets/freind_container_widget.dart';
+import 'package:chat_app/features/search/presentation/view/screens/search_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Color(0xffffffff),
       appBar: AppBar(
         backgroundColor: AppColors.primaryColor,
-        centerTitle: true,
+        centerTitle: false,
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -27,25 +28,17 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, SearchScreen.route);
+            },
+            icon: Icon(Icons.search, color: AppColors.secundryColor),
+          ),
+        ],
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: "search on your friends",
-                suffixIcon: Icon(Icons.send, color: AppColors.primaryColor),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(28),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(28),
-                  borderSide: BorderSide(color: AppColors.primaryColor),
-                ),
-              ),
-            ),
-          ),
           FriendContainerWidget(
             friendName: "mohamed Romdan",
             lastMessage: "يا صاحبي خلصت الكود ولا لسه؟",

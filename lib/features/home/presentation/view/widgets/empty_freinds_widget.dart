@@ -5,15 +5,13 @@ class EmptyFreinds extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Center(
-        child: Text(
-          "No chats founded",
-          style: TextStyle(
-            color: Color(0xff000000),
-            fontSize: 16,
-            fontWeight: FontWeight.w400,
-          ),
+    return Center(
+      child: Text(
+        "No chats founded",
+        style: TextStyle(
+          color: Color(0xff000000),
+          fontSize: 16,
+          fontWeight: FontWeight.w400,
         ),
       ),
     );
