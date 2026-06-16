@@ -4,7 +4,6 @@ import 'package:chat_app/features/home/presentation/view/widgets/empty_freinds_w
 import 'package:chat_app/features/home/presentation/view/widgets/freind_container_widget.dart';
 import 'package:chat_app/features/search/domain/use_caes/search_use_case.dart';
 import 'package:chat_app/features/search/presentation/view_model/searchcubit_cubit.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
