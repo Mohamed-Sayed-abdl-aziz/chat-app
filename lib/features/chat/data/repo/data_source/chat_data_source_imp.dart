@@ -17,8 +17,16 @@ class ChatDataSourceImp implements ChatDataSource {
     String chatId,
     MessageDto message,
     List<String> chatMembers,
+    String senderName,
+    String receiverName,
   ) {
-    return _firebase.sendMessage(chatId, message, chatMembers);
+    return _firebase.sendMessage(
+      chatId,
+      message,
+      chatMembers,
+      senderName,
+      receiverName,
+    );
   }
 }
 

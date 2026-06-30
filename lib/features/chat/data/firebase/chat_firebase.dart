@@ -25,6 +25,8 @@ class ChatFirebase {
     String chatId,
     MessageDto message,
     List<String> chatMembers,
+    String senderName,
+    String receiverName,
   ) async {
     try {
       final firestore = FirebaseFirestore.instance;
@@ -39,6 +41,8 @@ class ChatFirebase {
         "users": chatMembers,
         "message": message.text,
         "lastMessageDate": message.date,
+        "senderName": senderName,
+        "receiverName": receiverName,
       }, SetOptions(merge: true));
 
       batch.set(messageDocRef, message.toJson());

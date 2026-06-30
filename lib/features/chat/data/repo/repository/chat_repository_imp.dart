@@ -29,6 +29,8 @@ class ChatRepositoryImp implements ChatRepository {
     String chatId,
     MessageEntity message,
     List<String> chatMembers,
+    String senderName,
+    String receiverName,
   ) {
     return _source.sendMessage(
       chatId,
@@ -39,6 +41,8 @@ class ChatRepositoryImp implements ChatRepository {
         receiverId: message.receiverId,
       ),
       chatMembers,
+      senderName,
+      receiverName,
     );
   }
 }

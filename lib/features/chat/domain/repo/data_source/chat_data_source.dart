@@ -7,5 +7,7 @@ abstract interface class ChatDataSource {
     String chatId,
     MessageDto message,
     List<String> chatMembers,
+    String senderName,
+    String receiverName,
   );
 }

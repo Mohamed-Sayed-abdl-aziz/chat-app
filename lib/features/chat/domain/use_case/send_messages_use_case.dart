@@ -11,7 +11,10 @@ class SendMessageUseCase {
     String chatId,
     MessageEntity message,
     List<String> chatMembers,
-  ) => _repo.sendMessage(chatId, message, chatMembers);
+    String senderName,
+    String receiverName,
+  ) =>
+      _repo.sendMessage(chatId, message, chatMembers, senderName, receiverName);
 }
 // chatRepositoryInjectable
 

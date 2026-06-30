@@ -7,5 +7,7 @@ abstract interface class ChatRepository {
     String chatId,
     MessageEntity message,
     List<String> chatMembers,
+    String senderName,
+    String receiverName,
   );
 }

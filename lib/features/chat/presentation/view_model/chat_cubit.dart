@@ -40,8 +40,16 @@ class ChatCubit extends Cubit<ChatState> {
     String chatId,
     MessageEntity message,
     List<String> chatMembers,
+    String senderName,
+    String receiverName,
   ) async {
-    final resulte = await _sendMessage.invoke(chatId, message, chatMembers);
+    final resulte = await _sendMessage.invoke(
+      chatId,
+      message,
+      chatMembers,
+      senderName,
+      receiverName,
+    );
     switch (resulte) {
       case Success<bool>():
         emit(SendMessageSuccess());

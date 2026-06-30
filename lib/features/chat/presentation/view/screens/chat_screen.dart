@@ -145,6 +145,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
   void _sendMsg() {
     if (_messageController.text.trim().isEmpty) return;
+    final String myName =
+        FirebaseAuth.instance.currentUser?.displayName ?? "user";
 
     final newMessage = MessageEntity(
       text: _messageController.text.trim(),
@@ -153,7 +155,13 @@ class _ChatScreenState extends State<ChatScreen> {
       date: DateTime.now().toIso8601String(),
     );
 
-    _cubit?.sendMessage(chatId, newMessage, [myUid, friendEntity.uid]);
+    _cubit?.sendMessage(
+      chatId,
+      newMessage,
+      [myUid, friendEntity.uid],
+      myName,
+      friendEntity.name,
+    );
 
     _messageController.clear();
   }
