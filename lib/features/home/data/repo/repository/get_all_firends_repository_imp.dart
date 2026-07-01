@@ -20,13 +20,19 @@ class GetAllFirendsRepositoryImp implements GetAllFriendsRepository {
       switch (snapshot) {
         case Success<List<ChatDto>>():
           final List<ChatCardEntity> chats = snapshot.data.map((chat) {
+            final String friendId = chat.users!.firstWhere(
+              (id) => id != myUid,
+              orElse: () => "",
+            );
             final String displayName = chat.users?.indexOf(myUid) == 0
                 ? chat.receiverName!
                 : chat.senderName!;
+
             return ChatCardEntity(
               lastMessage: chat.message ?? "",
               lastMessageDate: chat.lastMessageDate ?? "",
               friendName: displayName,
+              friendId: friendId,
             );
           }).toList();
           return Success(chats);

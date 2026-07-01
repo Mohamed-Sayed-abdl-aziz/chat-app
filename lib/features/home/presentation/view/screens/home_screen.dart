@@ -1,9 +1,11 @@
 import 'package:chat_app/core/utils/app_colors.dart';
+import 'package:chat_app/features/chat/presentation/view/screens/chat_screen.dart';
 import 'package:chat_app/features/home/domain/entity/chat_card_entity.dart';
 import 'package:chat_app/features/home/domain/use_case/get_all_friends_use_case.dart';
 import 'package:chat_app/features/home/presentation/view/widgets/empty_freinds_widget.dart'; // ويدجت الشاشة الفاضية
 import 'package:chat_app/features/home/presentation/view/widgets/freind_container_widget.dart';
 import 'package:chat_app/features/home/presentation/view_model/home_cubit.dart';
+import 'package:chat_app/features/search/domain/entity/search_user_entity.dart';
 import 'package:chat_app/features/search/presentation/view/screens/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -72,7 +74,17 @@ class HomeScreen extends StatelessWidget {
                           friendName: chat.friendName,
                           lastMessage: chat.lastMessage,
                           time: chat.lastMessageDate.split('T').first,
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.of(context).pushNamed(
+                              ChatScreen.route,
+                              arguments: SearchUserEntity(
+                                email: "",
+                                phoneNumber: "",
+                                uid: chat.friendId,
+                                name: chat.friendName,
+                              ),
+                            );
+                          },
                         );
                       },
                     );

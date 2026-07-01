@@ -28,6 +28,7 @@ class AuthFirebase {
             email: user.email ?? "",
             password: user.password ?? "",
           );
+      await cridntional.user?.updateDisplayName(user.name ?? "user");
       user.uid = cridntional.user!.uid;
       var res = await _addUser(user);
       switch (res) {

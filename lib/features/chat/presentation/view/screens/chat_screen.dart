@@ -60,6 +60,12 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_rounded, color: AppColors.secundryColor),
+        ),
         backgroundColor: AppColors.primaryColor,
         centerTitle: true,
         title: Text(

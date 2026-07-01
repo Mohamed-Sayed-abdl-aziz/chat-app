@@ -18,7 +18,9 @@ class ChatDto {
 
   factory ChatDto.fromJson(jsonData) => ChatDto(
     chatId: jsonData["chatId"] ?? "",
-    users: jsonData["users"] ?? [],
+    users: jsonData["users"] != null
+        ? List<String>.from(jsonData["users"])
+        : [],
     message: jsonData["message"] ?? "",
     lastMessageDate: jsonData["lastMessageDate"] ?? "",
     senderName: jsonData["senderName"] ?? "",
