@@ -18,6 +18,10 @@ This project is a chat app that supports:
 - Navigation between main screens such as Login, Register, Home, Chat, and Search
 - Ready for future expansion with features like real-time messaging, files, and audio
 
+## Architecture
+
+This project is structured using Clean Architecture principles and State Management to keep the codebase organized, maintainable, and scalable.
+
 ## Technologies Used
 
 - Flutter
