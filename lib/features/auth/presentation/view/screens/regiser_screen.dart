@@ -95,24 +95,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   SizedBox(height: 20),
                   CustomTextField(
+                    obscureText: false,
                     controller: name,
                     hintText: "name",
                     validator: ValidatorApp.validateName,
                   ),
                   SizedBox(height: 10),
                   CustomTextField(
+                    obscureText: false,
                     controller: phoneNumber,
                     hintText: "phone number",
                     validator: ValidatorApp.validatePhoneNumber,
                   ),
                   SizedBox(height: 10),
                   CustomTextField(
+                    obscureText: false,
                     controller: email,
                     hintText: "Email",
                     validator: ValidatorApp.validateEmail,
                   ),
                   SizedBox(height: 10),
                   CustomTextField(
+                    obscureText: true,
                     controller: password,
                     hintText: "passwared",
                     validator: ValidatorApp.validatePassword,

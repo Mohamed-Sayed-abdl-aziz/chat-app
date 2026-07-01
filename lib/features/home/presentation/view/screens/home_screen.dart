@@ -1,4 +1,5 @@
 import 'package:chat_app/core/utils/app_colors.dart';
+import 'package:chat_app/features/auth/presentation/view/screens/login_screen.dart';
 import 'package:chat_app/features/chat/presentation/view/screens/chat_screen.dart';
 import 'package:chat_app/features/home/domain/entity/chat_card_entity.dart';
 import 'package:chat_app/features/home/domain/use_case/get_all_friends_use_case.dart';
@@ -7,6 +8,7 @@ import 'package:chat_app/features/home/presentation/view/widgets/freind_containe
 import 'package:chat_app/features/home/presentation/view_model/home_cubit.dart';
 import 'package:chat_app/features/search/domain/entity/search_user_entity.dart';
 import 'package:chat_app/features/search/presentation/view/screens/search_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -24,10 +26,30 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: const Color(0xffffffff),
         appBar: AppBar(
           backgroundColor: AppColors.primaryColor,
-          centerTitle: true,
+
+          centerTitle: false,
           title: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
+              Icon(Icons.exit_to_app, color: Colors.red),
+              SizedBox(width: 5),
+              GestureDetector(
+                onTap: () async {
+                  await FirebaseAuth.instance.signOut();
+                  if (!context.mounted) return;
+
+                  Navigator.of(context).pushReplacementNamed(LoginScreen.route);
+                },
+                child: Text(
+                  "Log out",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xffFF4949),
+                  ),
+                ),
+              ),
+              SizedBox(width: 60),
               Image.asset("assets/images/scholar.png", width: 50, height: 50),
               Text(
                 "Chat",

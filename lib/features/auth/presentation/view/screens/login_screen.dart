@@ -94,12 +94,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   SizedBox(height: 20),
                   CustomTextField(
+                    obscureText: false,
                     controller: email,
                     hintText: "Email",
                     validator: ValidatorApp.validateEmail,
                   ),
                   SizedBox(height: 10),
                   CustomTextField(
+                    obscureText: true,
                     controller: password,
                     hintText: "passwared",
                     validator: ValidatorApp.validatePassword,
