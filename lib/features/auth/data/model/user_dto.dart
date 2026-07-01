@@ -1,7 +1,7 @@
 import 'package:chat_app/features/auth/domain/entity/user_entity.dart';
 
-class UserModel {
-  UserModel({this.email, this.phoneNumber, this.uid, this.name, this.password});
+class UserDto {
+  UserDto({this.email, this.phoneNumber, this.uid, this.name, this.password});
 
   String? email;
   String? phoneNumber;
@@ -9,8 +9,8 @@ class UserModel {
   String? password;
   String? name;
 
-  factory UserModel.fromJson(Map<String, dynamic> jsonData) {
-    return UserModel(
+  factory UserDto.fromJson(Map<String, dynamic> jsonData) {
+    return UserDto(
       email: jsonData['email'] ?? "",
       phoneNumber: jsonData['phoneNumber'] ?? "",
       uid: jsonData['uid'] ?? "",

@@ -1,18 +1,18 @@
 import 'package:chat_app/core/network/resulet_firebase.dart';
-import 'package:chat_app/features/auth/data/model/user_model.dart';
+import 'package:chat_app/features/auth/data/model/user_dto.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthFirebase {
-  static CollectionReference<UserModel> get _collection => FirebaseFirestore
+  static CollectionReference<UserDto> get _collection => FirebaseFirestore
       .instance
       .collection("users")
-      .withConverter<UserModel>(
+      .withConverter<UserDto>(
         fromFirestore: (snapshot, options) =>
-            UserModel.fromJson(snapshot.data()!),
+            UserDto.fromJson(snapshot.data()!),
         toFirestore: (value, options) => value.toJson(),
       );
-  Future<ResultFirebase<bool>> _addUser(UserModel user) async {
+  Future<ResultFirebase<bool>> _addUser(UserDto user) async {
     try {
       await _collection.doc(user.uid).set(user);
       return Success(true);
@@ -21,13 +21,14 @@ class AuthFirebase {
     }
   }
 
-  Future<ResultFirebase<bool>> register({required UserModel user}) async {
+  Future<ResultFirebase<bool>> register({required UserDto user}) async {
     try {
       UserCredential cridntional = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(
             email: user.email ?? "",
             password: user.password ?? "",
           );
+      await cridntional.user?.updateDisplayName(user.name ?? "user");
       user.uid = cridntional.user!.uid;
       var res = await _addUser(user);
       switch (res) {
